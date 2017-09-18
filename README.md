@@ -15,6 +15,6 @@ $ rubocop
 
 Run:
 ```
-$ rackup -p 4567
+$ shotgun
 ```
-then navigate your web browser to `localhost:4567`
+then navigate your web browser to `localhost:9393`
