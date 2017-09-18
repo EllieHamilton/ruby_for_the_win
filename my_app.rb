@@ -8,8 +8,9 @@ class MyApp < Sinatra::Base
 
   get '/' do
     logger.info 'route to index'
+    erb :index
   end
-
+    
   get '/ping' do
   	'pong'
   end
