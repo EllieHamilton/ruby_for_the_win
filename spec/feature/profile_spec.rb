@@ -8,6 +8,5 @@ describe 'user profile' do
     visit '/user/' + user.id.to_s
     expect(page).to have_content 1
     expect(page).to have_content 'john smith'
-
   end
 end
