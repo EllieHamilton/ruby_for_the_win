@@ -14,6 +14,11 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  get '/user/:id' do
+    @user = User.find(params[:id])
+    erb :profile
+  end
+
   get '/ping' do
     'pong'
   end
