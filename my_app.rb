@@ -1,17 +1,20 @@
 require 'sinatra/base'
-
+require_relative 'models/user.rb'
+require 'sinatra/activerecord'
 # Our simple app
 class MyApp < Sinatra::Base
-  configure :production, :development do
+  configure :production, :development, :test do
     enable :logging
+    set :database_file, 'config/database.yml'
   end
 
   get '/' do
     logger.info 'route to index'
+    @users = User.all
     erb :index
   end
-    
+
   get '/ping' do
-  	'pong'
+    'pong'
   end
 end

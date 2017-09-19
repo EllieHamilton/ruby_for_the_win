@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: development_db
+  pool: 2
+  username: spongebob
+  password: password
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: test_db
+  pool: 2
+  username: spongebob
+  password: password

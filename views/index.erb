@@ -1,1 +1,3 @@
-<p>John Smith</p>
+<% @users.each do |user| %>
+   <p><%= user.forename %> <%= user.surname %></p>
+<% end %>

@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = 'test'
+
 require_relative '../../my_app.rb'
 require 'rack/test'
 require 'rspec'
@@ -28,7 +30,7 @@ describe 'health check' do
   end
 
   it 'returns pong' do
-  	get '/ping'
-  	expect(last_response.body).to eq 'pong'
+    get '/ping'
+    expect(last_response.body).to eq 'pong'
   end
 end
