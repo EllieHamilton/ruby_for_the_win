@@ -12,8 +12,8 @@ describe 'MyApp' do
     MyApp
   end
 
-  it 'has a valid route to index' do
-    get '/'
+  it 'has a valid route to users' do
+    get '/users'
     expect(last_response.status).to eq 200
   end
 
