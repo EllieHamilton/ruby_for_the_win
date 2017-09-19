@@ -18,6 +18,7 @@ class MyApp < Sinatra::Base
     @user = User.find(params[:id])
     erb :profile
   end
+  # tests
 
   get '/ping' do
     'pong'
