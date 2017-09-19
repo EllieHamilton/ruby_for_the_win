@@ -6,4 +6,9 @@ describe 'user index' do
     visit '/'
     expect(page).to have_content 'john smith'
   end
+
+  it 'links to the user profile page' do
+    visit '/'
+    expect(page).to have_link("john smith", href: "/user/1")
+  end
 end
