@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'models/user.rb'
 require 'sinatra/activerecord'
+require 'json'
 # Our simple app
 class MyApp < Sinatra::Base
   configure :production, :development, :test do
@@ -8,15 +9,15 @@ class MyApp < Sinatra::Base
     set :database_file, 'config/database.yml'
   end
 
-  get '/' do
+  get '/users' do
     logger.info 'route to index'
-    @users = User.all
-    erb :index
+    users = User.all
+    users.to_json
   end
 
   get '/user/:id' do
-    @user = User.find(params[:id])
-    erb :profile
+    user = User.find(params[:id])
+    user.to_json
   end
 
   get '/ping' do
